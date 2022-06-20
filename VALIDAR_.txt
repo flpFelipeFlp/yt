@@ -1,0 +1,36 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+#define MAXIMA_LONGITUD_CADENA 100	
+void concatenarCharACadena(char c, char *numero)
+{
+    char cadenaTemporal[2];
+    cadenaTemporal[0] = c;
+    cadenaTemporal[1] = '\0';
+    strcat(numero, cadenaTemporal);
+}
+void main() {
+		bool salir=true;
+		char numero[MAXIMA_LONGITUD_CADENA]="\0";		
+do {		
+        	char c=getch(); // lee una tecla         	
+			if (c>=49 && c<=57){	
+			concatenarCharACadena(c, numero);
+			system("CLS");		
+				printf("%s",numero);		
+			}else if (c==13){
+				salir=false;
+			}else if (c==8){
+				int pos=0;
+				pos=strlen(numero);		
+    			numero[pos-1] = '\0';
+    			system("CLS");		
+				printf("%s",numero);     		  			
+			}
+			
+		}while (salir==true);
+	
+	printf("\n\nNumero ingresado: %s",numero);
+	
+		}
