@@ -1,2 +1,2 @@
-# yt
+#Programacion en C
 codigos en c
